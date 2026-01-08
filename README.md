@@ -135,7 +135,7 @@ cargo run -- [command] [file]
 // Simple hello world program
 fn main() {
     print("Hello, World!")
-```}
+}``
 
 
 ### Basic Usage

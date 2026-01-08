@@ -123,7 +123,7 @@ cargo run -- [command] [file]
 ``curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
 
 # Clone the repository
-`git clone https://github.com/your-username/logos.git``
+`git clone https://github.com/XaturingAI/logos.git``
 ``cd logos``
 
 # Build the project

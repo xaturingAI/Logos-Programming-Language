@@ -107,11 +107,11 @@ An advanced, safe, multi-paradigm programming language that builds upon the idea
 ### Quick Install
 bash
 # Clone the repository
-git clone https://github.com/your-username/logos.git
-cd logos
+''git clone https://github.com/XaturingAI/logos.git''
+''cd logos''
 
 # Build the compiler
-cargo build --release
+''cargo build --release''
 
 # Run directly with Cargo
 cargo run -- [command] [file]
@@ -120,11 +120,7 @@ cargo run -- [command] [file]
 ### Building from Source
 `bash`
 # Install Rust if not already installed
-``curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
-
-# Clone the repository
-`git clone https://github.com/XaturingAI/logos.git``
-``cd logos``
+``curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh''
 
 # Build the project
 ``cargo build --release``
@@ -145,16 +141,16 @@ fn main() {
 ### Basic Usage
 bash
 # Run a program directly
-cargo run -- run examples/hello.logos
+''cargo run -- run examples/hello.logos''
 
 # Build an executable
-cargo run -- build examples/hello.logos
+''cargo run -- build examples/hello.logos''
 
 # Initialize a new project
-cargo run -- init my_project
+''cargo run -- init my_project''
 
 # Run tests
-cargo run -- test
+''cargo run -- test''
 
 
 ### Project Structure
@@ -178,65 +174,65 @@ my_project/
 ### Variables
 logos
 // Immutable variables (default)
-let x = 42
+''let x = 42
 let name = "Alice"
-let numbers = [1, 2, 3, 4, 5]
+let numbers = [1, 2, 3, 4, 5]''
 
 // Mutable variables (explicit declaration)
-mut counter = 0
-counter = counter + 1
+''mut counter = 0
+counter = counter + 1''
 
 // Constants
-const PI = 3.14159
-const MAX_USERS = 1000
+''const PI = 3.14159
+const MAX_USERS = 1000''
 
 // Type annotations (optional but recommended)
-let age: Int = 25
+''let age: Int = 25
 let price: Float = 19.99
-let is_active: Bool = true
+let is_active: Bool = true''
 
 // Pattern binding
-let [first, second, ...rest] = [1, 2, 3, 4, 5]
-let {name, age} = {name: "Bob", age: 30}
+''let [first, second, ...rest] = [1, 2, 3, 4, 5]
+let {name, age} = {name: "Bob", age: 30}''
 
 
 ### Functions
 logos
 // Basic function
-fn add(a: Int, b: Int) -> Int {
+''fn add(a: Int, b: Int) -> Int {
     return a + b
-}
+}''
 
 // Function with default parameters
-fn greet(name: String, greeting: String = "Hello") -> String {
+''fn greet(name: String, greeting: String = "Hello") -> String {
     return "${greeting}, ${name}!"
-}
+}''
 
 // Lambda expressions
-let square = |x| x * x
-let add_ten = |x| x + 10
+''let square = |x| x * x
+let add_ten = |x| x + 10''
 
 // Higher-order functions
-fn apply_twice<T>(f: fn(T) -> T, x: T) -> T {
+''fn apply_twice<T>(f: fn(T) -> T, x: T) -> T {
     return f(f(x))
-}
+}''
 
 // Async functions
-async fn fetch_data(url: String) -> Result<String, Error> {
+''async fn fetch_data(url: String) -> Result<String, Error> {
     let response = await http_get(url)
     return response.body
-}
+}''
 
 // Generic functions
-fn identity<T>(value: T) -> T {
+''fn identity<T>(value: T) -> T {
     return value
-}
+}''
 
 
 ### Classes and Objects
 logos
 // Basic class
-class Person {
+''class Person {
     name: String
     age: Int
 
@@ -253,7 +249,7 @@ class Person {
         self.age = self.age + 1
     }
 }
-
+''
 // Creating instances
 let person = Person.new("Alice", 25)
 print(person.greet())

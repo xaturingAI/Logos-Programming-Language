@@ -994,12 +994,12 @@ fn functional_examples() {
 
 ## Conclusion
 
-Eux represents the next evolution in programming languages, combining the best features of multiple paradigms with cutting-edge research in type systems, concurrency, and safety. It addresses modern development challenges while maintaining approachability for developers familiar with existing languages.
+Logos represents the next evolution in programming languages, combining the best features of multiple paradigms with cutting-edge research in type systems, concurrency, and safety. It addresses modern development challenges while maintaining approachability for developers familiar with existing languages.
 
 The language is designed for the next decade of software development, where safety, performance, and interoperability are paramount. With its advanced features and practical design, Eux is positioned to become a leading choice for systems requiring both high performance and high safety guarantees.
 
 Key takeaways:
-- Eux combines functional and object-oriented programming seamlessly
+- Logos combines functional and object-oriented programming seamlessly
 - Advanced type system with gradual typing provides both safety and flexibility
 - Revolutionary multi-language integration enables polyglot development
 - Modern concurrency models support scalable applications

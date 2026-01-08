@@ -118,16 +118,16 @@ cargo run -- [command] [file]
 
 
 ### Building from Source
-bash
+`bash`
 # Install Rust if not already installed
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+``curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
 
 # Clone the repository
-git clone https://github.com/your-username/logos.git
-cd logos
+`git clone https://github.com/your-username/logos.git``
+``cd logos``
 
 # Build the project
-cargo build --release
+``cargo build --release``
 
 # The executable will be available at target/release/logos
 
@@ -135,11 +135,11 @@ cargo build --release
 ## Getting Started
 
 ### Hello World
-logos
+``logos
 // Simple hello world program
 fn main() {
     print("Hello, World!")
-}
+```}
 
 
 ### Basic Usage

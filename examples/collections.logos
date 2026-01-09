@@ -1,0 +1,36 @@
+// Collections example in Logos
+fn main() {
+    // Arrays with advanced operations
+    let numbers = [1, 2, 3, 4, 5]
+    let doubled = numbers.map(|x| x * 2)
+    let evens = numbers.filter(|x| x % 2 == 0)
+    let sum = numbers.reduce(0, |acc, x| acc + x)
+    
+    print("Original numbers: ${numbers}")
+    print("Doubled: ${doubled}")
+    print("Evens: ${evens}")
+    print("Sum: ${sum}")
+
+    // Maps (key-value collections)
+    let ages = {
+        "Alice": 25,
+        "Bob": 30,
+        "Charlie": 35
+    }
+    
+    print("Ages: ${ages}")
+    print("Alice's age: ${ages['Alice']}")
+
+    // Set operations
+    let primes = Set.new([2, 3, 5, 7, 11])
+    let evens_set = Set.new([2, 4, 6, 8, 10])
+    let intersection = primes.intersection(evens_set)
+    
+    print("Primes: ${primes}")
+    print("Evens: ${evens_set}")
+    print("Intersection: ${intersection}")
+
+    // Tuple destructuring
+    let (name, age, city) = ("Alice", 25, "New York")
+    print("Name: ${name}, Age: ${age}, City: ${city}")
+}

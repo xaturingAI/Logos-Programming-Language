@@ -1,0 +1,33 @@
+// Variables and Data Types example in Logos
+fn main() {
+    // Immutable variables (default)
+    let x = 42
+    let name = "Logos"
+    let numbers = [1, 2, 3, 4, 5]
+
+    // Mutable variables (explicit declaration)
+    mut counter = 0
+    counter = counter + 1
+
+    // Constants
+    const PI = 3.14159
+    const LANGUAGE_NAME = "Logos"
+
+    // Type annotations (optional but recommended)
+    let age: Int = 25
+    let price: Float = 19.99
+    let is_active: Bool = true
+
+    // Pattern binding
+    let [first, second, ...rest] = [10, 20, 30, 40, 50]
+    
+    print("Immutable variable x: ${x}")
+    print("Name: ${name}")
+    print("Numbers: ${numbers}")
+    print("Counter: ${counter}")
+    print("PI constant: ${PI}")
+    print("Age: ${age}")
+    print("Price: ${price}")
+    print("Is active: ${is_active}")
+    print("First: ${first}, Second: ${second}, Rest: ${rest}")
+}

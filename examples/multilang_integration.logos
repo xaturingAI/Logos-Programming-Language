@@ -1,0 +1,43 @@
+// Multi-Language Integration example in Logos
+fn main() {
+    // Python integration
+    let python_result = @python("
+def greet(name):
+    return f'Hello from Python, {name}!'
+
+greet('Logos User')
+")
+    print(python_result)
+
+    // JavaScript integration
+    let js_result = @js("
+function add(a, b) {
+    return a + b;
+}
+
+add(10, 20);
+")
+    print("JavaScript result: ${js_result}")
+
+    // Rust integration
+    let rust_result = @rust("
+fn multiply(x: i32, y: i32) -> i32 {
+    x * y
+}
+
+multiply(6, 7)
+")
+    print("Rust result: ${rust_result}")
+
+    // Simple demonstration of calling external code
+    demonstrate_multilang_features()
+}
+
+fn demonstrate_multilang_features() {
+    print("Demonstrating multi-language integration capabilities:")
+    print("- Python code execution with @python annotation")
+    print("- JavaScript code execution with @js annotation") 
+    print("- Rust code execution with @rust annotation")
+    print("- Safe data exchange between languages")
+    print("- Type-safe inter-language communication")
+}

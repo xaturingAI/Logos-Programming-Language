@@ -1,0 +1,35 @@
+// Concurrency example in Logos
+async fn main() {
+    // Async/await example
+    let task1 = fetch_data("https://api1.com")
+    let task2 = fetch_data("https://api2.com")
+
+    let [result1, result2] = await Promise.all([task1, task2])
+    print("Async results: ${result1}, ${result2}")
+
+    // Actor model example
+    let counter = Counter.spawn()
+    counter.increment()
+    counter.increment()
+    let count = counter.get_count()
+    print("Counter value: ${count}")
+}
+
+async fn fetch_data(url: String) -> String {
+    // Simulate async operation
+    await sleep(1000)  // Sleep for 1 second
+    return "Data from ${url}"
+}
+
+// Actor model
+actor Counter {
+    count: Int = 0
+
+    fn increment(self) {
+        self.count = self.count + 1
+    }
+
+    fn get_count(self) -> Int {
+        return self.count
+    }
+}

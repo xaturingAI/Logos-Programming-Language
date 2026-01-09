@@ -1,0 +1,89 @@
+// Advanced Type System Features example in Logos
+fn main() {
+    // Example usage of dependent types concept (simulated)
+    let vec1 = create_vector(5)
+    let vec2 = create_vector(5)
+    let result_vec = vector_add(vec1, vec2)
+    print("Vector addition result: ${result_vec}")
+
+    // Example usage of linear types concept (simulated)
+    let file_handle = open_file("example.txt")
+    let content = process_file(file_handle)
+    print("File content: ${content}")
+
+    // Example usage of effect system
+    run_with_console_effects()
+}
+
+// Dependent types example - types that depend on values (conceptual)
+fn create_vector(size: Int) -> [Int] {
+    // Create a vector of the specified size
+    let mut vec = []
+    for i in 0..size {
+        vec.push(i)
+    }
+    return vec
+}
+
+fn vector_add(v1: [Int], v2: [Int]) -> [Int] {
+    // Assuming vectors are the same size
+    let mut result = []
+    for i in 0..len(v1) {
+        result.push(v1[i] + v2[i])
+    }
+    return result
+}
+
+// Linear types example - resources that must be used exactly once (conceptual)
+fn open_file(filename: String) -> FileHandle {
+    // Create a file handle (simulated)
+    return FileHandle.new(filename)
+}
+
+fn process_file(handle: FileHandle) -> String {
+    // Process the file and ensure handle is properly managed
+    let content = read_file_content(handle)
+    close_file_handle(handle)  // Required for linear type concept
+    return content
+}
+
+// Effect system example - algebraic effects for control flow
+fn run_with_console_effects() {
+    // Simulate effect handling
+    print("Running with console effects...")
+    print_message("Hello from effect system!")
+    let input = get_user_input("Enter your name: ")
+    print("You entered: ${input}")
+}
+
+fn print_message(msg: String) {
+    print(msg)
+}
+
+fn get_user_input(prompt: String) -> String {
+    print("${prompt}")
+    return "UserInput"  // Simulated input
+}
+
+// Simulated file handle for linear types demonstration
+class FileHandle {
+    filename: String
+    is_closed: Bool = false
+
+    fn new(filename: String) -> FileHandle {
+        return FileHandle { filename: filename, is_closed: false }
+    }
+}
+
+fn read_file_content(handle: FileHandle) -> String {
+    if !handle.is_closed {
+        return "Content of ${handle.filename}"
+    } else {
+        return "File is closed"
+    }
+}
+
+fn close_file_handle(mut handle: FileHandle) {
+    handle.is_closed = true
+    print("File ${handle.filename} closed")
+}

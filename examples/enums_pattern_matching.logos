@@ -1,0 +1,63 @@
+// Enums and Pattern Matching example in Logos
+fn main() {
+    // Basic enum usage
+    let color = Color.Red
+    describe_color(color)
+
+    // Result enum with pattern matching
+    let success_result = Result.Success("Operation successful")
+    let error_result = Result.Error("Something went wrong")
+    
+    handle_result(success_result)
+    handle_result(error_result)
+
+    // Advanced pattern matching
+    let list1 = []
+    let list2 = [42]
+    let list3 = [1, 2]
+    let list4 = [10, 20, 30, 40, 50]
+    
+    describe_list(list1)
+    describe_list(list2)
+    describe_list(list3)
+    describe_list(list4)
+}
+
+// Basic enum
+enum Color {
+    Red,
+    Green,
+    Blue
+}
+
+// Enum with associated data
+enum Result<T, E> {
+    Success(T),
+    Error(E)
+}
+
+// Using enums with pattern matching
+fn describe_color(color: Color) {
+    match color {
+        Color.Red => print("The color is red"),
+        Color.Green => print("The color is green"),
+        Color.Blue => print("The color is blue")
+    }
+}
+
+fn handle_result<T, E>(result: Result<T, E>) {
+    match result {
+        Result.Success(value) => print("Success: ${value}"),
+        Result.Error(message) => print("Error: ${message}")
+    }
+}
+
+// Advanced pattern matching
+fn describe_list(list: [Int]) {
+    match list {
+        [] => print("Empty list"),
+        [x] => print("Single element: ${x}"),
+        [first, second] => print("Two elements: ${first}, ${second}"),
+        [head, ...tail] => print("Head: ${head}, Tail length: ${len(tail)}")
+    }
+}

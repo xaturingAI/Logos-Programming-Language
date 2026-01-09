@@ -1,0 +1,38 @@
+// Functions example in Logos
+fn main() {
+    // Basic function
+    let sum = add(5, 3)
+    print("Sum: ${sum}")
+
+    // Function with default parameters
+    let greeting = greet("Alice")
+    let custom_greeting = greet("Bob", "Hi")
+    print(greeting)
+    print(custom_greeting)
+
+    // Lambda expressions
+    let square = |x| x * x
+    let result = square(5)
+    print("Square of 5: ${result}")
+
+    // Higher-order functions
+    let numbers = [1, 2, 3, 4, 5]
+    let doubled = numbers.map(|x| x * 2)
+    print("Doubled numbers: ${doubled}")
+
+    // Generic function
+    let identity_val = identity(42)
+    print("Identity of 42: ${identity_val}")
+}
+
+fn add(a: Int, b: Int) -> Int {
+    return a + b
+}
+
+fn greet(name: String, greeting: String = "Hello") -> String {
+    return "${greeting}, ${name}!"
+}
+
+fn identity<T>(value: T) -> T {
+    return value
+}

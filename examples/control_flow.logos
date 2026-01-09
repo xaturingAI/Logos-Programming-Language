@@ -1,0 +1,48 @@
+// Advanced Control Flow example in Logos
+fn main() {
+    // Guard clauses in match
+    process_number(-5)
+    process_number(50)
+    process_number(150)
+
+    // Pipeline operator
+    let result = [1, 2, 3, 4, 5]
+        |> map(|x| x * 2)
+        |> filter(|x| x > 4)
+        |> reduce(0, |acc, x| acc + x)
+    print("Pipeline result: ${result}")
+
+    // Exception handling with typed exceptions
+    test_exceptions()
+}
+
+// Guard clauses in match
+fn process_number(n: Int) {
+    match n {
+        x if x < 0 => print("Negative: ${x}"),
+        x if x > 100 => print("Large: ${x}"),
+        x => print("Normal: ${x}")
+    }
+}
+
+// Exception handling with typed exceptions
+fn test_exceptions() {
+    try {
+        risky_operation()
+    } catch TypeError(error) {
+        print("Type error: ${error}")
+    } catch ValueError(error) {
+        print("Value error: ${error}")
+    } except error: Error {
+        print("General error: ${error}")
+    } finally {
+        print("Cleanup resources")
+    }
+}
+
+fn risky_operation() {
+    // Simulate a risky operation
+    if true {
+        throw ValueError("Something went wrong")
+    }
+}

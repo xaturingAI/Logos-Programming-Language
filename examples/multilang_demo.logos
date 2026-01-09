@@ -1,0 +1,44 @@
+// Example Logos file demonstrating multilang calls
+// This file shows how Logos can call external Python and Rust code
+
+fn main() {
+    // Call Python code to print a message
+    @python {
+        print("Hello from Python called by Logos!")
+        x = 10
+        y = 20
+        result = x + y
+        print(f"Python calculated: {x} + {y} = {result}")
+    }
+    
+    // Call Rust code to do some computation
+    @rust {
+        let a = 5;
+        let b = 7;
+        let sum = a + b;
+        println!("Rust calculated: {} + {} = {}", a, b, sum);
+        
+        // Rust vector example
+        let numbers = vec![1, 2, 3, 4, 5];
+        println!("Rust vector length: {}", numbers.len());
+    }
+    
+    // Call Python again to demonstrate string manipulation
+    @python {
+        text = "Logos is awesome!"
+        reversed_text = text[::-1]  # Python string slicing
+        print(f"Original: {text}")
+        print(f"Reversed: {reversed_text}")
+    }
+    
+    // Call Rust to demonstrate closures
+    @rust {
+        let numbers = vec![1, 2, 3, 4, 5];
+        let doubled: Vec<i32> = numbers.iter().map(|x| x * 2).collect();
+        println!("Original: {:?}", numbers);
+        println!("Doubled: {:?}", doubled);
+    }
+    
+    // Print final message from Logos
+    println!("Logos successfully called external Python and Rust code!");
+}

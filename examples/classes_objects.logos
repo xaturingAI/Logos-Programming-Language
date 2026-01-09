@@ -1,0 +1,47 @@
+// Classes and Objects example in Logos
+fn main() {
+    // Creating instances
+    let person = Person.new("Alice", 25)
+    print(person.greet())
+
+    // Using methods
+    person.have_birthday()
+    print("After birthday - Age: ${person.age}")
+
+    // Inheritance example
+    let student = Student.new("Bob", 20, "Grade 12")
+    print(student.greet())
+}
+
+// Basic class
+class Person {
+    name: String
+    age: Int
+
+    fn init(name: String, age: Int) {
+        this.name = name
+        this.age = age
+    }
+
+    fn greet(self) -> String {
+        return "Hello, I'm ${this.name}, age ${this.age}"
+    }
+
+    fn have_birthday(mut self) {
+        self.age = self.age + 1
+    }
+}
+
+// Inheritance
+class Student extends Person {
+    grade: String
+
+    fn init(name: String, age: Int, grade: String) {
+        super.init(name, age)
+        this.grade = grade
+    }
+
+    override fn greet(self) -> String {
+        return "${super.greet()}, and I'm in grade ${this.grade}"
+    }
+}

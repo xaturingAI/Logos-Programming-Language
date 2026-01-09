@@ -1,0 +1,152 @@
+// Comprehensive Logos Example - Bringing it all together
+fn main() {
+    print("=== Welcome to Logos Programming Language ===")
+    
+    // Show basic functionality
+    demonstrate_basic_features()
+    
+    // Show advanced type system
+    demonstrate_advanced_types()
+    
+    // Show concurrency
+    demonstrate_concurrency()
+    
+    // Show multi-language integration
+    demonstrate_multilang()
+    
+    print("=== Logos features demonstrated! ===")
+}
+
+fn demonstrate_basic_features() {
+    print("\n--- Basic Features ---")
+    
+    // Variables
+    let name = "Logos"
+    mut counter = 0
+    
+    // Functions
+    let greeting = create_greeting(name)
+    print(greeting)
+    
+    // Collections
+    let numbers = [1, 2, 3, 4, 5]
+    let doubled = numbers.map(|x| x * 2)
+    print("Doubled numbers: ${doubled}")
+    
+    // Pattern matching
+    let result = Result.Success("Everything is working!")
+    match result {
+        Result.Success(msg) => print("Success: ${msg}"),
+        Result.Error(err) => print("Error: ${err}")
+    }
+}
+
+fn demonstrate_advanced_types() {
+    print("\n--- Advanced Type System ---")
+    
+    // Simulated dependent types usage
+    let sized_vector = create_sized_vector(3)
+    print("Created vector with size info: ${sized_vector}")
+    
+    // Simulated linear types usage
+    let resource = acquire_resource("important_data")
+    let processed = process_resource(resource)
+    print("Processed resource result: ${processed}")
+}
+
+fn demonstrate_concurrency() {
+    print("\n--- Concurrency Features ---")
+    
+    // Actor example
+    let calculator = Calculator.spawn()
+    calculator.add(10)
+    calculator.multiply(5)
+    let result = calculator.get_result()
+    print("Calculator result: ${result}")
+}
+
+fn demonstrate_multilang() {
+    print("\n--- Multi-Language Integration ---")
+    
+    // Python example
+    let py_result = @python("
+def fibonacci(n):
+    if n <= 1:
+        return n
+    return fibonacci(n-1) + fibonacci(n-2)
+
+fibonacci(6)
+")
+    print("Python Fibonacci(6): ${py_result}")
+    
+    // JavaScript example
+    let js_result = @js("
+Math.sqrt(144);
+")
+    print("JavaScript Math operation: ${js_result}")
+}
+
+// Helper functions
+fn create_greeting(name: String) -> String {
+    return "Hello, ${name}! Welcome to the future of programming."
+}
+
+enum Result<T, E> {
+    Success(T),
+    Error(E)
+}
+
+fn create_sized_vector(size: Int) -> [Int] {
+    let mut vec = []
+    for i in 0..size {
+        vec.push(i * 10)
+    }
+    return vec
+}
+
+fn acquire_resource(name: String) -> Resource {
+    return Resource.new(name)
+}
+
+fn process_resource(res: Resource) -> String {
+    let data = res.get_data()
+    res.cleanup()  // Ensuring resource is properly handled
+    return data
+}
+
+class Resource {
+    name: String
+    data: String
+    
+    fn new(name: String) -> Resource {
+        return Resource { 
+            name: name, 
+            data: "Data from ${name}" 
+        }
+    }
+    
+    fn get_data(self) -> String {
+        return self.data
+    }
+    
+    fn cleanup(self) {
+        print("Cleaning up resource: ${self.name}")
+    }
+}
+
+// Actor for demonstrating concurrency
+actor Calculator {
+    value: Int = 0
+    
+    fn add(self, num: Int) {
+        self.value = self.value + num
+    }
+    
+    fn multiply(self, num: Int) {
+        self.value = self.value * num
+    }
+    
+    fn get_result(self) -> Int {
+        return self.value
+    }
+}

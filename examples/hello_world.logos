@@ -1,0 +1,5 @@
+// Hello World example in Logos
+fn main() {
+    print("Hello, World!")
+    print("Welcome to the Logos Programming Language!")
+}

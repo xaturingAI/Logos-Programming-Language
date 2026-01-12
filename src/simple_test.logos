@@ -1,6 +1,0 @@
-fn main() {
-    // Simple test to verify multilang functionality
-    @python { print("Hello from Python"); }
-    @rust { println!("Hello from Rust"); }
-    println!("Logos multilang system working!");
-}

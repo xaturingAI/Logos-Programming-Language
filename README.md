@@ -18,7 +18,7 @@
 
 ## Introduction to Logos
 
-Logos (Divine Reason/Wisdom) is a modern, safe, multi-paradigm programming language that builds upon the Elixir concept with significant enhancements. It combines the power of functional and object-oriented programming with seamless multi-language interoperability, advanced type systems, and next-generation concurrency models.
+Logos (Divine Reason/Wisdom) is a modern, safe, multi-paradigm programming language that builds upon the Rust (moving to zig)  concept with significant enhancements. It combines the power of functional and object-oriented programming with seamless multi-language interoperability, advanced type systems, and next-generation concurrency models.
 
 ### Key Features
 - Ultra-fast performance with ahead-of-time optimizations

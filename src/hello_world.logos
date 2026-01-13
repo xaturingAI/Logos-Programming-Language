@@ -1,4 +1,0 @@
-// Simple hello world program in Logos
-fn main() {
-    print("Hello, World!")
-}
